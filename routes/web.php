@@ -28,15 +28,6 @@ Route::get('/html-posts', function () {
     return view('html-posts.index', [
         'posts' => Post::all(),
     ]);
-
-    // $posts = [];
-
-    // $posts[] = file_get_contents(resource_path("views/html-posts/posts/example-post-1.html"));
-    // $posts[] = file_get_contents(resource_path("views/html-posts/posts/example-post-2.html"));
-    // $posts[] = file_get_contents(resource_path("views/html-posts/posts/example-post-3.html"));
-
-
-    // return view('html-posts.index', compact('posts'));
 });
 
 Route::get('/html-posts/{post}', function ($slug) {

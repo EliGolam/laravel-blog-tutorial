@@ -104,8 +104,14 @@ class Post
 
     public static function find(string $slug) {
         // of all the blog posts find the one who's slug matches the one that was requested
-        $posts = static::all();
-        return $posts->firstWhere('slug', $slug);
+        $post = static::all()->firstWhere('slug', $slug);
+
+        if(! $post) {
+            throw new ModelNotFoundException();
+        }
+        else {
+            return $post;
+        }
 
         // if (!file_exists($path = resource_path("views/html-posts/posts/{$slug}.html"))) {
         //     /* Redirect if File doesn't exist */
