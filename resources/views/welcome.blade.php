@@ -1,5 +1,8 @@
-@extends('layouts.app', ['title' => 'Laravel Blogs Welcome'])
+@extends('layouts.app', [
+    'title' => 'Laravel Blogs Welcome',
+    'titleHeading' => 'This is the Welcome Page',
+    ])
 
 @section('content')
-    Welcome Page
+    <p>Hello</p>
 @endsection
