@@ -9,7 +9,9 @@
     <title>{{ $title ?? 'Laravel Blog' }}</title>
 </head>
 <body>
-    <x-app-header :titleHeading="$titleHeading" />
+    <x-app-header
+        :titleHeading="$titleHeading ?? 'Laravel personal Blog'"
+    />
 
     <main>
         @yield('content')

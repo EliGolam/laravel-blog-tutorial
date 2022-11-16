@@ -16,3 +16,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+// TESTING ROUTES
+/* -----------------------------------------------------------------------
+| html-posts
+| using html literals through wildcards using php filegetcontent
+*/
+Route::get('/html-posts', function () {
+    return view('html-posts.index');
+});
+
+Route::get('/html-posts/{post}', function ($slug) {
+    $post = file_get_contents(resource_path("views/html-posts/posts/{$slug}.html"));
+
+    return view('html-posts.show', compact('post'));
+});
