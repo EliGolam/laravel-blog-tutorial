@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @foreach ($posts as $idx=>$post)
+    @foreach ($posts as $post)
         <section>
             <?= $post ?>
         </section>
