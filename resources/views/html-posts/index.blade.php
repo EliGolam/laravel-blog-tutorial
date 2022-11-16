@@ -3,7 +3,8 @@
 @section('content')
     @foreach ($posts as $post)
         <section>
-            <?= $post ?>
+            <h3>{{ $post->title }}</h3>
+            <p>{{ $post->excerpt }}</p>
         </section>
     @endforeach
 @endsection
