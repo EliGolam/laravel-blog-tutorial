@@ -3,6 +3,7 @@
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'WelcomePageController@index')->name('welcome-page');
 
 
 // TESTING ROUTES
@@ -24,16 +23,14 @@ Route::get('/', function () {
 | html-posts
 | using html literals through wildcards using php filegetcontent
 */
-Route::get('/html-posts', function () {
-    return view('html-posts.index', [
-        'posts' => Post::all(),
-    ]);
-});
+Route::get('/html-posts', 'PostController@index')->name('html-posts');
 
-Route::get('/html-posts/{post}', function ($slug) {
-    // Find an html-post by its slug and pass it dynamically to a view called show
-    return view('html-posts.show', [
-        'post' => Post::find($slug),
-    ]);
+Route::get('/html-posts/{post:slug}', 'PostController@find')->name("html-posts.show");
 
-})->where('post', '([a-zA-Z1-9\-\+_&])+');
+// Route::get('/html-posts/{post}', function ($slug) {
+//     // Find an html-post by its slug and pass it dynamically to a view called show
+//     return view('html-posts.show', [
+//         'post' => Post::find($slug),
+//     ]);
+
+// })->where('post', '([a-zA-Z1-9\-\+_&])+');
