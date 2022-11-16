@@ -76,7 +76,8 @@ class Post
         //         );
         // });
 
-        return collect(File::files(resource_path("views/html-posts/posts")))
+        return cache()->remember('html-posts.all', now()->addDay(), function () {
+            return collect(File::files(resource_path("views/html-posts/posts")))
             ->map(fn($file) => YamlFrontMatter::parseFile($file))
             ->map(fn($document) => new Post(
                     $document->title,
@@ -84,7 +85,20 @@ class Post
                     $document->date,
                     $document->body(),
                     $document->slug,
-        ));
+            ))
+            ->sortBy('date');
+        });
+
+        // return collect(File::files(resource_path("views/html-posts/posts")))
+        //     ->map(fn($file) => YamlFrontMatter::parseFile($file))
+        //     ->map(fn($document) => new Post(
+        //             $document->title,
+        //             $document->excerpt,
+        //             $document->date,
+        //             $document->body(),
+        //             $document->slug,
+        //     ))
+        //     ->sortBy('date');
         // $file and $document can be substituted with any variable name
     }
 
