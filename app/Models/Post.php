@@ -11,7 +11,7 @@ class Post extends Model
     use HasFactory;
 
     // Fillable is the explicit method
-    protected $fillable = ['title', 'excerpt', 'slug', 'body'];
+    protected $fillable = ['title', 'excerpt', 'slug', 'body', 'category_id'];
     // mirror opposite of the fillable property is guarded
     // protected $guarded = ['id'];
 
