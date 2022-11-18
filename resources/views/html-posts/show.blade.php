@@ -1,8 +1,10 @@
 <x-app-layout>
-    <x-slot name="title">Laravel Blog | {{ $post->title }}</x-slot>
+    <x-slot name="title">{{ $post->title }}</x-slot>
     <x-slot name="titleHeading">{{ $post->title }}</x-slot>
 
     <p>{{ $post->body }}</p>
+
+    <a href="{{ route('html-posts') }}">Go back</a>
 </x-app-layout>
 
 

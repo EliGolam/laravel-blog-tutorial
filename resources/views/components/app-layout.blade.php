@@ -6,7 +6,7 @@
     {{-- My CSS --}}
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-    <title>{{ $title ?? 'Laravel Blog' }}</title>
+    <title>Laravel Blog | {{ $title ?? 'by EliGolam' }}</title>
 </head>
 <body>
     <x-app-header :titleHeading=" $titleHeading ?? 'Laravel personal Blog' " />
