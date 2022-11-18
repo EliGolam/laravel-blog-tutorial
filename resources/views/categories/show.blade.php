@@ -1,0 +1,3 @@
+Show
+
+@dump($posts)

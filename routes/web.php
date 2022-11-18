@@ -35,5 +35,5 @@ Route::get('/html-posts/{post:slug}', 'PostController@find')->name("html-posts.s
 
 // })->where('post', '([a-zA-Z1-9\-\+_&])+');
 
-
+Route::get('/categories', 'CategoryController@index')->name('categories');
 Route::get('/categories/{category:slug}', 'CategoryController@show')->name('categories.show');
