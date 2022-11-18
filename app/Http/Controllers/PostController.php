@@ -4,12 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+// use Illuminate\Support\Facades\DB;
+
 
 class PostController extends Controller
 {
     public function index() {
         return view('html-posts.index', [
-            'posts' => Post::all(),
+            // Lazy Loading method
+            // 'posts' => Post::all(),
+
+            // Eager Loading
+            'posts' => Post::with('category')->get(),
         ]);
     }
 
@@ -19,6 +25,11 @@ class PostController extends Controller
         //     // 'post' => Post::find($post->id),
         //     'post' => $post, // Eloquent Model Binding
         // ]);
+
+        // LOGGING
+        // DB::listen(function ($query) {
+        //     logger($query->sql);
+        // });
 
         return view('html-posts.show', compact('post'));
     }

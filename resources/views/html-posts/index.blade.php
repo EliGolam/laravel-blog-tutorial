@@ -6,6 +6,7 @@
         <section>
             <h3><a href="{{ route('html-posts.show', $post) }}">{{ $post->title }}</a></h3>
             <p>{{ $post->excerpt }}</p>
+            <p><em>{{ $post->category->name }}</em></p>
         </section>
     @endforeach
 </x-app-layout>
