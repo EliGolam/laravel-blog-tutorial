@@ -2,6 +2,7 @@
     <x-slot name="title">{{ $post->title }}</x-slot>
     <x-slot name="titleHeading">{{ $post->title }}</x-slot>
 
+    <h2 style="font-size: .8rem; color: grey;"><em>{{ $post->category->name }}</em></h2>
     <p>{{ $post->body }}</p>
 
     <a href="{{ route('html-posts') }}">Go back</a>

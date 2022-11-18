@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Category;
 
 class Post extends Model
 {
@@ -13,4 +14,9 @@ class Post extends Model
     protected $fillable = ['title', 'excerpt', 'slug', 'body'];
     // mirror opposite of the fillable property is guarded
     // protected $guarded = ['id'];
+
+
+    public function category() {
+        return $this->belongsTo(Category::class);
+    }
 }
