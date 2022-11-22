@@ -15,7 +15,7 @@ class PostController extends Controller
             // 'posts' => Post::all(),
 
             // Eager Loading
-            'posts' => Post::with('category', 'user')->get(),
+            'posts' => Post::latest()->with('category', 'user')->get(),
         ]);
     }
 
