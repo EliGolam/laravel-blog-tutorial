@@ -28,6 +28,7 @@ class PostSeeder extends Seeder
             $title = "This is a Post: {$i}";
 
             $post->title = $title;
+            $post->user_id = $faker->numberBetween(1, 10);
             $post->excerpt = $faker->realText();
             $post->slug = Str::slug($title, '-');
             $post->body = $faker->realTextBetween(300, 800, 3);
