@@ -14,12 +14,13 @@ class UserController extends Controller
     }
 
     public function find(User $author) {
-        return view('authors.show', [
-            'author' => $author,
+        return view('html-posts.index', [
+            // 'author' => $author,
+            'posts' => $author->posts,
         ]);
     }
 
     public function showUser(User $user) {
-        return view('authors.show', compact('user'));
+        return view('authors.show', []);
     }
 }

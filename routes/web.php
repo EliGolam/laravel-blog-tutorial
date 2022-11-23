@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 
@@ -38,6 +39,6 @@ Route::get('/html-posts/{post:slug}', 'PostController@find')->name("html-posts.s
 Route::get('/categories', 'CategoryController@index')->name('categories');
 Route::get('/categories/{category:slug}', 'CategoryController@show')->name('categories.show');
 
-// AUTHORS
 Route::get('/authors', 'UserController@index')->name('authors');
-Route::get('/authors/{author:name}', 'UserController@find')->name('authors.show');
+Route::get('/authors/{author}', 'UserController@find')->name('authors.show');
+
