@@ -2,7 +2,7 @@
     <x-slot name="title">{{ $post->title }}</x-slot>
     <x-slot name="titleHeading">{{ $post->title }}</x-slot>
 
-    <h2 style="font-size: .8rem; color: grey;">written by {{ $post->author->name }} in <a href="{{ route('categories.show', $post->category) }}">{{ $post->category->name }}</a></h2>
+    <h2 style="font-size: .8rem; color: grey;">written by <a href="/">{{ $post->author->name }}</a> in <a href="{{ route('categories.show', $post->category) }}">{{ $post->category->name }}</a></h2>
     <p>{{ $post->body }}</p>
 
     <a href="{{ route('html-posts') }}">Go back</a>
