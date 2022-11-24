@@ -1,0 +1,7 @@
+@import '_generics';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
