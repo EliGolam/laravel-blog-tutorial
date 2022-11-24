@@ -13,7 +13,8 @@ class CategoryController extends Controller
 
     public function show(Category $category) {
         return view('categories.show', [
-            'posts' => $category->posts,
+            'category' => $category,
+            'posts' => $category->posts->load(['author']),
         ]);
     }
 }

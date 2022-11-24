@@ -16,7 +16,7 @@ class UserController extends Controller
     public function find(User $author) {
         return view('html-posts.index', [
             // 'author' => $author,
-            'posts' => $author->posts,
+            'posts' => $author->posts->load(['category', 'author']),
         ]);
     }
 

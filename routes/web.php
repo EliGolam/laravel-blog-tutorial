@@ -40,5 +40,5 @@ Route::get('/categories', 'CategoryController@index')->name('categories');
 Route::get('/categories/{category:slug}', 'CategoryController@show')->name('categories.show');
 
 Route::get('/authors', 'UserController@index')->name('authors');
-Route::get('/authors/{author}', 'UserController@find')->name('authors.show');
+Route::get('/authors/{author:username}', 'UserController@find')->name('authors.show');
 
